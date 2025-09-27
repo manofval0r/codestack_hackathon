@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
 
@@ -72,7 +72,7 @@
                 <pre><code id="daily-code-block"></code></pre>
             </div>
             <div class="code-editor-look">
-                <textarea id="daily-solution-input" placeholder="Type your corrected code here..."></textarea>
+                <textarea id="solution-input" placeholder="Type your corrected code here..."></textarea>
             </div>
             <button id="submit-daily-solution-button">Submit Patch</button>
         </div>
@@ -95,19 +95,14 @@
             <div class="stat-item">
                 <h2>LEVEL: <span id="player-level">1</span></h2>
             </div>
-            <div class="xp-bar-container stat-item">
-                <h2>XP</h2>
-                <div class="xp-bar"><div id="xp-bar-fill"></div></div>
-                <span id="xp-value">0/100</span>
-            </div>
             <div class="stat-item">
-                <h2>SYS-INTEGRITY</h2>
+                <h2>HEALTH</h2>
                 <div class="integrity-bar">
                     <div id="integrity-bar-fill"></div>
                     <span id="integrity-value">100%</span>
                 </div>
             </div>
-            <div class="stat-item header-buttons">
+                        <div class="stat-item header-buttons">
                 <button id="daily-challenge-button">DAILY</button>
                 <button id="open-menu-button">MENU</button>
             </div>
@@ -115,9 +110,9 @@
 
         <main id="challenge-area">
             <div id="challenge-description">
-                <h3 id="challenge-title">Challenge Title</h3>
-                <p id="learning-concept">A brief lesson about the concept will appear here.</p>
-                <p id="challenge-text">Challenge description goes here.</p>
+                <h2 id="challenge-title">Challenge Title</h2>
+                <p id="learning-concept"><h3>Lesson concept</h3></p>
+                <p id="challenge-text"><h3>Challenge Description.</h3></p>
             </div>
             <div id="code-viewer">
                 <h4>Broken Code:</h4>
@@ -166,6 +161,8 @@
         <div id="achievement-name">Achievement Unlocked</div>
         <div id="achievement-desc">Description of achievement</div>
     </div>
+
+    <div id="xp-notification" class="hidden"></div>
 
     <script type="module" src="scripts/main.js"></script>
 </body>

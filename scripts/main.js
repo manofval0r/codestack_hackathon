@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.hintsUsedThisChallenge = false;
             this.dailyChallengeStartTime = 0;
             this.currentDailyChallenge = null;
+            this.playerXP = 0;
+            this.streak = 0;
             this.initialize();
         }
 
@@ -114,6 +116,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.target.classList.contains('signifier')) {
                     UI.hideProgressTooltip();
                 }
+            });
+
+            // Tab switching for Solution/AI Assistant
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Remove 'active' from all tab buttons and tab contents
+                    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+
+                    // Add 'active' to clicked button and corresponding content
+                    btn.classList.add('active');
+                    const tab = btn.dataset.tab;
+                    document.getElementById(`${tab}-content`).classList.add('active');
+                });
             });
         }
         
@@ -236,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.gameState.markChallengeCompleted(this.currentChallenge.moduleKey, this.currentChallenge.id);
                 this.updateModuleRank();
                 this.updateProgress();
+                this.showXPNotification(this.gameState.state.xp); // <-- Add this line
                 this.loadNextChallenge();
             } else {
                 UI.showFeedback(`Stage ${this.currentBossStage + 1}/${this.currentChallenge.stages.length} Cleared... Anomaly persists.`, true);
@@ -257,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             this.updateModuleRank();
             this.updateProgress();
+            this.showXPNotification(this.gameState.state.xp);
             this.loadNextChallenge();
         }
 
@@ -325,6 +343,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.gameState.save();
                 UI.showAchievement(unlockedAchievement);
             }
+        }
+
+        awardXP(madeError) {
+            let baseXP = madeError ? 50 : 80;
+            let streakBonus = this.streak > 0 ? 30 * this.streak : 0;
+            let totalXP = baseXP + streakBonus;
+
+            this.playerXP += totalXP;
+
+            // Remove or comment out the line below, since #xp-value no longer exists
+            // document.getElementById('xp-value').textContent = `${this.playerXP} XP`;
+
+            // If no errors, increase streak
+            if (!madeError) {
+                this.streak++;
+            } else {
+                this.streak = 0;
+            }
+        }   
+
+        showXPNotification(xp) {
+            const notif = document.getElementById('xp-notification');
+            notif.textContent = `You now have ${xp} XP!`;
+            notif.classList.remove('hidden');
+            notif.classList.add('show');
+            setTimeout(() => {
+                notif.classList.remove('show');
+                notif.classList.add('hidden');
+            }, 2500);
         }
     }
     

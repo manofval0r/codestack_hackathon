@@ -46,10 +46,10 @@ export const UI = {
     hideSystemMenu() { this.systemMenuModal.classList.add('hidden'); },
 
     updatePlayerStats(state) {
-        this.levelText.textContent = state.level;
-        this.xpValue.textContent = `${state.xp} / ${state.xpForNextLevel}`;
-        const xpPercentage = (state.xp / state.xpForNextLevel) * 100;
-        this.xpBarFill.style.width = `${xpPercentage}%`;
+        // XP bar and value have been removed from the UI, so don't update them.
+        // Only update stats that still exist in your header.
+        if (this.levelText) this.levelText.textContent = state.level;
+        // Add other stat updates here if needed (e.g., health, integrity)
     },
 
     updateSystemIntegrity(integrity) {
