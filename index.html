@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeStack: The Debugging RPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div id="loading-logo">CodeStack</div>
+            <p id="loading-status">Waking the system...</p>
+        </div>
+    </div>
+
+    <div id="initial-profile-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <h1>Create Your Operative Profile</h1>
+            <p>Before you can access the system, please identify yourself.</p>
+            <div class="form-group">
+                <label for="username-input">Enter Username:</label>
+                <input type="text" id="username-input" placeholder="e.g., GlitchHunter">
+            </div>
+            <div class="form-group">
+                <label for="language-select">Preferred Language:</label>
+                <select id="language-select">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+            </div>
+            <button id="save-profile-button">Initialize Profile</button>
+        </div>
+    </div>
+
+    <div id="system-menu-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button id="close-menu-button" class="close-button">&times;</button>
+            <div class="menu-tabs">
+                <button class="menu-tab-button active" data-tab="roadmap">Roadmap</button>
+                <button class="menu-tab-button" data-tab="upgrades">Upgrades</button>
+                <button class="menu-tab-button" data-tab="profile">Profile</button>
+            </div>
+            <div class="menu-content-area">
+                <div id="roadmap-content" class="menu-tab-content active">
+                    <h2>System Module Roadmap</h2>
+                    <div id="roadmap-list"></div>
+                </div>
+                <div id="upgrades-content" class="menu-tab-content">
+                    <h2>System Upgrades</h2>
+                    <p>Spend XP to acquire permanent system enhancements.</p>
+                    <div id="upgrades-list"></div>
+                </div>
+                <div id="profile-content" class="menu-tab-content">
+                    <h2>Operative Roster</h2>
+                    <div id="roster-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <header id="player-stats">
+            <div class="stat-item">
+                <h2 id="header-typing-effect"></h2>
+            </div>
+            <div class="stat-item">
+                <h2>LEVEL: <span id="player-level">1</span></h2>
+            </div>
+            <div class="xp-bar-container stat-item">
+                <h2>XP</h2>
+                <div class="xp-bar"><div id="xp-bar-fill"></div></div>
+                <span id="xp-value">0/100</span>
+            </div>
+            <div class="stat-item">
+                <h2>SYS-INTEGRITY</h2>
+                <div class="integrity-bar">
+                    <div id="integrity-bar-fill"></div>
+                    <span id="integrity-value">100%</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <button id="open-menu-button">MENU</button>
+            </div>
+        </header>
+
+        <main id="challenge-area">
+            <div id="challenge-description">
+                <h3 id="challenge-title">Challenge Title</h3>
+                <p id="learning-concept">A brief lesson about the concept will appear here.</p>
+                <p id="challenge-text">Challenge description goes here.</p>
+            </div>
+            <div id="code-viewer">
+                <h4>Broken Code:</h4>
+                <pre><code id="code-block">Code will be displayed here.</code></pre>
+            </div>
+        </main>
+
+        <div id="feedback-bar" class="hidden"></div>
+
+        <footer id="interaction-area">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="solution">Solution</button>
+                <button class="tab-button" data-tab="ai">AI Assistant</button>
+            </div>
+            <div class="tab-content-area">
+                <div class="tab-content active" id="solution-content">
+                    <div class="code-editor-look">
+                        <textarea id="solution-input" placeholder="Type your corrected code here..."></textarea>
+                        <div id="pills-container"></div>
+                    </div>
+                    <button id="submit-solution-button">Submit (Ctrl+L)</button>
+                </div>
+                <div class="tab-content" id="ai-content">
+                    <div id="ai-chat-box">
+                        <div class="message system">[SYSTEM]: AI Assistant online. Awaiting query.</div>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" id="prompt-input" placeholder="Ask a question...">
+                        <button id="ask-ai-button">Prompt AI (-10 XP)</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div id="progress-tracker">
+        <div id="progress-path">
+            <div id="progress-signifiers"></div>
+            <div id="progress-player-icon">🚶</div>
+            <div id="progress-home-icon">🏠</div>
+        </div>
+    </div>
+
+    <div id="achievement-toast" class="hidden">
+        <div id="achievement-name">Achievement Unlocked</div>
+        <div id="achievement-desc">Description of achievement</div>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

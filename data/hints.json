@@ -1,0 +1,21 @@
+{
+    "js-01": [
+        "Take a close look at the end of each line inside the function. Does something feel missing?",
+        "In JavaScript, it's a common convention to end statements. How do you do that?",
+        "The `return` statement is missing a semicolon at the end."
+    ],
+    "js-02": [
+        "Programming languages are case-sensitive. Check the variable names very carefully.",
+        "Compare the variable declaration `let userName` with how it's used in `console.log`.",
+        "The variable `userName` has a capital 'N', but it's being called with a lowercase 'n'."
+    ],
+    "css-01": [
+        "One of these CSS properties is spelled the American English way, and one is not. CSS uses American English.",
+        "How do you set the text color in CSS? Check the property name for typos.",
+        "The correct property for text color is `color`, not `colour`."
+    ],
+    "default": [
+        "I can't seem to find a specific hint for this. Try looking for common syntax errors.",
+        "Check your spelling and capitalization. That's a common source of bugs."
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "HTML": {
+        "displayName": "Module 1: HTML Architecture",
+        "rankUnlocked": "syntaxSorcerer",
+        "challenges": [
+            {
+                "id": "html-01",
+                "title": "System Genesis: Root Protocol",
+                "learningConcept": "[INTEL BRIEFING]: Operative, the `<!DOCTYPE html>` protocol is the master handshake for all system architecture. It must be the first data packet in any transmission to ensure modern rendering protocols are engaged.",
+                "description": "[MISSION OBJECTIVE]: System initialization has failed. The root protocol is missing from the primary document. Inject the `<!DOCTYPE html>` protocol at line 1 to begin.",
+                "brokenCode": "<html>...</html>",
+                "solution": "<!DOCTYPE html>",
+                "xp": 20
+            },
+            {
+                "id": "html-02",
+                "title": "Data Stream Error: Unclosed Packet",
+                "learningConcept": "[INTEL BRIEFING]: All data packets, like `<p>`, must be properly terminated with a closing sequence (e.g., `</p>`) to maintain stream integrity. Failure to terminate results in data corruption downstream.",
+                "description": "[MISSION OBJECTIVE]: An unterminated paragraph packet is corrupting the data stream, causing layout instability. Locate and terminate the packet correctly by providing the full, corrected line.",
+                "brokenCode": "<p>This is a paragraph",
+                "solution": "<p>This is a paragraph</p>",
+                "xp": 25
+            },
+            {
+                "id": "html-03",
+                "title": "Signal Corruption: Image Packet",
+                "learningConcept": "[INTEL BRIEFING]: Visual data packets (`<img>`) must include the `alt` protocol. This serves as a fallback for low-fidelity transmissions and is critical for our visually-impaired agents' access systems.",
+                "description": "[MISSION OBJECTIVE]: A visual data packet has been flagged for non-compliance. The `alt` protocol is missing. Stabilize the packet by integrating the required `alt` attribute.",
+                "brokenCode": "<img src='logo.png'>",
+                "solution": "<img src='logo.png' alt='logo'>",
+                "xp": 30
+            },
+            {
+                "id": "html-04",
+                "title": "Architecture Anomaly: Generic Container",
+                "learningConcept": "[INTEL BRIEFING]: High-level system architecture requires semantic containers like `<header>` for proper indexing by our system crawlers. Generic containers (`<div>`) are inefficient and considered legacy.",
+                "description": "[MISSION OBJECTIVE]: The page's primary header is using a generic container, causing a sub-optimal configuration alert. Upgrade the container to the `<header>` protocol.",
+                "brokenCode": "<div class='page-header'>...</div>",
+                "solution": "<header class='page-header'>...</header>",
+                "xp": 35
+            }
+        ]
+    },
+    "CSS": {
+        "displayName": "Module 2: CSS Policy Enforcement",
+        "rankUnlocked": "logicWeaver",
+        "challenges": [
+            {
+                "id": "css-01",
+                "title": "Firewall Alert: Unspecified Target",
+                "learningConcept": "[INTEL BRIEFING]: To apply a security policy (CSS rule) to a group of elements (a class), the policy selector must be prefixed with the `.` designator to specify the target group.",
+                "description": "[MISSION OBJECTIVE]: A firewall rule is failing to apply to the `error-text` class. The target designator is missing. Correct the selector to enforce the policy.",
+                "brokenCode": "error-text {\n  color: red;\n}",
+                "solution": ".error-text {color: red;}",
+                "xp": 40
+            },
+            {
+                "id": "css-02",
+                "title": "Security Breach: Unique Identifier",
+                "learningConcept": "[INTEL BRIEFING]: To apply a high-priority policy to a unique system component (an ID), the selector must be prefixed with the `#` hash designator for precise targeting.",
+                "description": "[MISSION OBJECTIVE]: A critical policy is failing to engage on the `main-nav` component. The unique identifier is not being targeted. Fix the selector to secure the component.",
+                "brokenCode": "main-nav {\n  background-color: #333;\n}",
+                "solution": "#main-nav",
+                "xp": 40
+            },
+            {
+                "id": "css-03",
+                "title": "Containment Field Failure",
+                "learningConcept": "[INTEL BRIEFING]: The `padding` protocol generates an internal buffer zone *inside* a container's forcefield (border). The `margin` protocol generates an external exclusion zone.",
+                "description": "[MISSION OBJECTIVE]: The `.button` container's internal buffer has collapsed. It is incorrectly configured with an exclusion zone protocol. Replace `margin` with the correct `padding` protocol.",
+                "brokenCode": ".button {\n  margin: 10px;\n}",
+                "solution": "padding: 10px;",
+                "xp": 50
+            },
+            {
+                "id": "css-04",
+                "title": "Vector Misalignment",
+                "learningConcept": "[INTEL BRIEFING]: In a `flex` vector field, the `justify-content` protocol governs alignment along the primary axis (horizontal by default).",
+                "description": "[MISSION OBJECTIVE]: Sub-components in the `.container` vector field are not aligning to the primary axis center. The wrong alignment protocol is engaged. Deploy `justify-content` to correct the vector.",
+                "brokenCode": ".container {\n  display: flex;\n  align-items: center;\n}",
+                "solution": "justify-content: center;",
+                "xp": 60
+            },
+            {
+                "id": "css-05",
+                "title": "Targeting Matrix: Gravitational Constant",
+                "type": "multiple-choice",
+                "learningConcept": "[INTEL BRIEFING]: The `text-align` property acts as a gravitational constant for text nodes within a container, aligning them horizontally.",
+                "description": "[MISSION OBJECTIVE]: The text nodes in the `<h1>` container are misaligned. Select the correct protocol from the available options to apply a central gravitational pull.",
+                "brokenCode": "h1 {\n  /* Which property goes here? */\n}",
+                "options": [
+                    "align-content: center;",
+                    "justify-content: center;",
+                    "text-align: center;",
+                    "margin: auto;"
+                ],
+                "solution": "text-align: center;",
+                "xp": 50
+            }
+        ]
+    },
+    "JavaScript": {
+        "displayName": "Module 3: JS Execution Logic",
+        "rankUnlocked": "architectArcanist",
+        "challenges": [
+            {
+                "id": "js-01",
+                "title": "Logic Bomb: Assignment vs. Comparison",
+                "learningConcept": "[INTEL BRIEFING]: In script execution, `=` is the assignment operator used to implant a value. `===` is the comparison operator used to verify a value. Confusing them can lead to catastrophic logic failures.",
+                "description": "[MISSION OBJECTIVE]: A conditional statement contains a logic bomb. It's assigning a value instead of comparing it. Disarm the bomb by correcting the operator to `===`.",
+                "brokenCode": "if (x = 10)",
+                "solution": "if (x === 10)",
+                "xp": 70
+            },
+            {
+                "id": "js-02",
+                "title": "Subroutine Malfunction",
+                "learningConcept": "[INTEL BRIEFING]: To execute a named subroutine (a function), you must use the invocation operator `()`. Simply referencing the name will not trigger execution.",
+                "description": "[MISSION OBJECTIVE]: The `showWelcomeMessage` subroutine is failing to execute because the invocation operator is missing. Trigger the subroutine correctly.",
+                "brokenCode": "const user = 'Alex';\nshowWelcomeMessage;",
+                "solution": "showWelcomeMessage();",
+                "xp": 70
+            },
+            {
+                "id": "js-03",
+                "title": "Interface Anomaly: Null Pointer",
+                "learningConcept": "[INTEL BRIEFING]: The `querySelector` utility requires a valid CSS selector string to interface with the Document Object Matrix (DOM). For unique IDs, this requires the `#` prefix.",
+                "description": "[MISSION OBJECTIVE]: A query for the `main-title` interface component is returning a null pointer. The selector is invalid. Correct the query string to establish a connection.",
+                "brokenCode": "document.querySelector('main-title');",
+                "solution": "document.querySelector('#main-title');",
+                "xp": 80
+            }
+        ]
+    }
+}
