@@ -64,6 +64,29 @@
         </div>
     </div>
 
+    <div id="daily-challenge-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <h1 id="daily-challenge-title">Daily Anomaly Detected</h1>
+            <p id="daily-challenge-description">A random system glitch has been detected. Patch it as quickly as possible. Good luck, operative.</p>
+            <div id="daily-code-viewer">
+                <pre><code id="daily-code-block"></code></pre>
+            </div>
+            <div class="code-editor-look">
+                <textarea id="daily-solution-input" placeholder="Type your corrected code here..."></textarea>
+            </div>
+            <button id="submit-daily-solution-button">Submit Patch</button>
+        </div>
+    </div>
+
+    <div id="daily-results-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <h1 id="daily-results-title">Patch Successful</h1>
+            <p id="daily-results-time"></p>
+            <p id="daily-results-leaderboard">Global Leaderboards will be activated after the hackathon.</p>
+            <button id="close-daily-results-button">Return to Mainframe</button>
+        </div>
+    </div>
+
     <div id="game-container" class="hidden">
         <header id="player-stats">
             <div class="stat-item">
@@ -84,7 +107,8 @@
                     <span id="integrity-value">100%</span>
                 </div>
             </div>
-            <div class="stat-item">
+            <div class="stat-item header-buttons">
+                <button id="daily-challenge-button">DAILY</button>
                 <button id="open-menu-button">MENU</button>
             </div>
         </header>
@@ -135,6 +159,7 @@
             <div id="progress-player-icon">🚶</div>
             <div id="progress-home-icon">🏠</div>
         </div>
+        <div id="progress-tooltip" class="hidden"></div>
     </div>
 
     <div id="achievement-toast" class="hidden">

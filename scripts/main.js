@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         async initialize() {
-            this.audioManager.play('loading');
             await Promise.all([this.challengeManager.load(), this.aiManager.load()]);
             this.setupEventListeners();
             
