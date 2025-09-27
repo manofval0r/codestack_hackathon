@@ -1,21 +1,14 @@
 {
-    "js-01": [
-        "Take a close look at the end of each line inside the function. Does something feel missing?",
-        "In JavaScript, it's a common convention to end statements. How do you do that?",
-        "The `return` statement is missing a semicolon at the end."
-    ],
-    "js-02": [
-        "Programming languages are case-sensitive. Check the variable names very carefully.",
-        "Compare the variable declaration `let userName` with how it's used in `console.log`.",
-        "The variable `userName` has a capital 'N', but it's being called with a lowercase 'n'."
-    ],
-    "css-01": [
-        "One of these CSS properties is spelled the American English way, and one is not. CSS uses American English.",
-        "How do you set the text color in CSS? Check the property name for typos.",
-        "The correct property for text color is `color`, not `colour`."
-    ],
-    "default": [
-        "I can't seem to find a specific hint for this. Try looking for common syntax errors.",
-        "Check your spelling and capitalization. That's a common source of bugs."
-    ]
+    "html-01": ["Every valid HTML5 document starts with a very specific declaration on the first line.", "Look up the 'HTML5 doctype'."],
+    "html-02": ["The <p> tag is an element that contains content. It needs to be told where it ends.", "Most HTML tags come in pairs: an opening tag and a closing tag."],
+    "html-03": ["Images need an attribute to describe their content for accessibility. What is it called?", "The attribute is 'alt'. Add it inside the <img> tag."],
+    "html-boss": ["Focus on one stage at a time. For stage one, how do you make a link clickable?", "Remember that lists need list items, and semantic tags like <footer> are preferred over <div>."],
+    "css-01": ["When selecting an element by its class name in CSS, the selector needs a special character at the beginning.", "Class selectors start with a dot (.)."],
+    "css-02": ["Selecting an element by its unique ID requires a different special character than a class.", "ID selectors start with a hash (#)."],
+    "css-03": ["Which of these properties is specifically designed to align inline content like text?", "text-align directly controls the horizontal alignment of text within its parent element."],
+    "css-boss": ["Check the property names carefully. Is 'color' used correctly? What's the right 'display' value for grid? Which flexbox property controls the main axis?"],
+    "js-01": ["A single equals sign is for giving a variable a value. How do you check if two things are equal?", "Use the strict equality operator, ===, for comparisons."],
+    "js-02": ["You've correctly referenced the function by name, but you haven't told the program to actually run it.", "To call a function, you need to add parentheses () after its name."],
+    "js-boss": ["Remember your CSS selector rules for IDs. Check how functions provide output. Review the syntax for adding an event listener."],
+    "default": ["I can't seem to find a specific hint for this. Try looking for common syntax errors.", "Check your spelling and capitalization. That's a common source of bugs."]
 }

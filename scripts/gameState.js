@@ -67,10 +67,15 @@ export class GameState {
         this.save();
     }
     
-    updateRank(moduleKey, allModuleChallenges) {
+    updateRank(moduleKey, totalModuleChallenges) {
         const completedInModule = this.state.completedChallenges[moduleKey]?.length || 0;
-        if (completedInModule === allModuleChallenges.length) {
-            const newRank = allModuleChallenges.rankUnlocked;
+        if (completedInModule === totalModuleChallenges) {
+            const rankMap = {
+                "HTML": "syntaxSorcerer",
+                "CSS": "logicWeaver",
+                "JavaScript": "architectArcanist"
+            };
+            const newRank = rankMap[moduleKey];
             if (newRank && this.state.rank !== newRank) {
                 this.state.rank = newRank;
                 this.save();

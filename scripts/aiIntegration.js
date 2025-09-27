@@ -9,14 +9,9 @@ export class AIManager {
     }
 
     async getHint(challengeId) {
-        // Simulate network delay for realism
         await new Promise(resolve => setTimeout(resolve, 800));
-
         const challengeHints = this.hints[challengeId] || this.hints['default'];
-        // For the demo, we'll just return the first hint.
-        // A more advanced version could track how many times the user asked.
-        const hint = challengeHints[0];
-
+        const hint = challengeHints[Math.floor(Math.random() * challengeHints.length)];
         return hint;
     }
-}       
+}

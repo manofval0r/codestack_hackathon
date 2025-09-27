@@ -3,133 +3,41 @@
         "displayName": "Module 1: HTML Architecture",
         "rankUnlocked": "syntaxSorcerer",
         "challenges": [
-            {
-                "id": "html-01",
-                "title": "System Genesis: Root Protocol",
-                "learningConcept": "[INTEL BRIEFING]: Operative, the `<!DOCTYPE html>` protocol is the master handshake for all system architecture. It must be the first data packet in any transmission to ensure modern rendering protocols are engaged.",
-                "description": "[MISSION OBJECTIVE]: System initialization has failed. The root protocol is missing from the primary document. Inject the `<!DOCTYPE html>` protocol at line 1 to begin.",
-                "brokenCode": "<html>...</html>",
-                "solution": "<!DOCTYPE html>",
-                "xp": 20
-            },
-            {
-                "id": "html-02",
-                "title": "Data Stream Error: Unclosed Packet",
-                "learningConcept": "[INTEL BRIEFING]: All data packets, like `<p>`, must be properly terminated with a closing sequence (e.g., `</p>`) to maintain stream integrity. Failure to terminate results in data corruption downstream.",
-                "description": "[MISSION OBJECTIVE]: An unterminated paragraph packet is corrupting the data stream, causing layout instability. Locate and terminate the packet correctly by providing the full, corrected line.",
-                "brokenCode": "<p>This is a paragraph",
-                "solution": "<p>This is a paragraph</p>",
-                "xp": 25
-            },
-            {
-                "id": "html-03",
-                "title": "Signal Corruption: Image Packet",
-                "learningConcept": "[INTEL BRIEFING]: Visual data packets (`<img>`) must include the `alt` protocol. This serves as a fallback for low-fidelity transmissions and is critical for our visually-impaired agents' access systems.",
-                "description": "[MISSION OBJECTIVE]: A visual data packet has been flagged for non-compliance. The `alt` protocol is missing. Stabilize the packet by integrating the required `alt` attribute.",
-                "brokenCode": "<img src='logo.png'>",
-                "solution": "<img src='logo.png' alt='logo'>",
-                "xp": 30
-            },
-            {
-                "id": "html-04",
-                "title": "Architecture Anomaly: Generic Container",
-                "learningConcept": "[INTEL BRIEFING]: High-level system architecture requires semantic containers like `<header>` for proper indexing by our system crawlers. Generic containers (`<div>`) are inefficient and considered legacy.",
-                "description": "[MISSION OBJECTIVE]: The page's primary header is using a generic container, causing a sub-optimal configuration alert. Upgrade the container to the `<header>` protocol.",
-                "brokenCode": "<div class='page-header'>...</div>",
-                "solution": "<header class='page-header'>...</header>",
-                "xp": 35
-            }
+            { "id": "html-01", "title": "System Genesis: Root Protocol", "learningConcept": "Concept: Every HTML5 page must begin with <!DOCTYPE html>. This declaration tells the browser to interpret the code using modern web standards.", "description": "Your Task: The document is missing its essential first line. Add the <!DOCTYPE html> declaration to initialize the page correctly.", "brokenCode": "<html>...</html>", "solution": "<!DOCTYPE html>", "xp": 20 },
+            { "id": "html-02", "title": "Data Stream Error: Unclosed Packet", "learningConcept": "Concept: Most HTML elements, like paragraphs (<p>), require both an opening and a closing tag (</p>). This tells the browser where the element's content begins and ends.", "description": "Your Task: The paragraph tag in the code is not closed, which can corrupt the page layout. Provide the full, corrected line with the proper closing tag.", "brokenCode": "<p>This is a paragraph", "solution": "<p>This is a paragraph</p>", "xp": 25 },
+            { "id": "html-03", "title": "Signal Corruption: Image Packet", "learningConcept": "Concept: Image tags (<img>) must have an 'alt' attribute. This provides alternative text for screen readers and displays if the image fails to load.", "description": "Your Task: The image tag is missing its 'alt' attribute. Add the attribute to make the image accessible. The alt text can be 'logo'.", "brokenCode": "<img src='logo.png'>", "solution": "<img src='logo.png' alt='logo'>", "xp": 30 },
+            { "id": "html-boss", "title": "BOSS: The Architect's Gauntlet", "isBoss": true, "xp": 100, "learningConcept": "Concept: A well-structured HTML document uses semantic tags to define its parts (like <header>, <footer>, <li>) and follows strict syntax rules for its elements.", "stages": [
+                { "description": "[STAGE 1/3] Your Task: A link (or 'anchor' tag) is broken. It's missing the 'href' attribute that tells it where to go. Fix the tag so it points to the homepage ('/').", "brokenCode": "<a>Home</a>\n<a href='/about'>About</a>", "solution": "<a href='/'>Home</a>" },
+                { "description": "[STAGE 2/3] Your Task: A list is structured incorrectly. Text inside an unordered list (<ul>) must be wrapped in list item (<li>) tags. Correct the line.", "brokenCode": "<ul>Home</ul>", "solution": "<li>Home</li>" },
+                { "description": "[STAGE 3/3] Your Task: The page's footer is using a generic <div> tag. For better structure and accessibility, it should use the semantic <footer> tag. Replace the div with the correct tag.", "brokenCode": "<div id='footer'>Copyright</div>", "solution": "<footer id='footer'>Copyright</footer>" }
+            ]}
         ]
     },
     "CSS": {
         "displayName": "Module 2: CSS Policy Enforcement",
         "rankUnlocked": "logicWeaver",
         "challenges": [
-            {
-                "id": "css-01",
-                "title": "Firewall Alert: Unspecified Target",
-                "learningConcept": "[INTEL BRIEFING]: To apply a security policy (CSS rule) to a group of elements (a class), the policy selector must be prefixed with the `.` designator to specify the target group.",
-                "description": "[MISSION OBJECTIVE]: A firewall rule is failing to apply to the `error-text` class. The target designator is missing. Correct the selector to enforce the policy.",
-                "brokenCode": "error-text {\n  color: red;\n}",
-                "solution": ".error-text {color: red;}",
-                "xp": 40
-            },
-            {
-                "id": "css-02",
-                "title": "Security Breach: Unique Identifier",
-                "learningConcept": "[INTEL BRIEFING]: To apply a high-priority policy to a unique system component (an ID), the selector must be prefixed with the `#` hash designator for precise targeting.",
-                "description": "[MISSION OBJECTIVE]: A critical policy is failing to engage on the `main-nav` component. The unique identifier is not being targeted. Fix the selector to secure the component.",
-                "brokenCode": "main-nav {\n  background-color: #333;\n}",
-                "solution": "#main-nav",
-                "xp": 40
-            },
-            {
-                "id": "css-03",
-                "title": "Containment Field Failure",
-                "learningConcept": "[INTEL BRIEFING]: The `padding` protocol generates an internal buffer zone *inside* a container's forcefield (border). The `margin` protocol generates an external exclusion zone.",
-                "description": "[MISSION OBJECTIVE]: The `.button` container's internal buffer has collapsed. It is incorrectly configured with an exclusion zone protocol. Replace `margin` with the correct `padding` protocol.",
-                "brokenCode": ".button {\n  margin: 10px;\n}",
-                "solution": "padding: 10px;",
-                "xp": 50
-            },
-            {
-                "id": "css-04",
-                "title": "Vector Misalignment",
-                "learningConcept": "[INTEL BRIEFING]: In a `flex` vector field, the `justify-content` protocol governs alignment along the primary axis (horizontal by default).",
-                "description": "[MISSION OBJECTIVE]: Sub-components in the `.container` vector field are not aligning to the primary axis center. The wrong alignment protocol is engaged. Deploy `justify-content` to correct the vector.",
-                "brokenCode": ".container {\n  display: flex;\n  align-items: center;\n}",
-                "solution": "justify-content: center;",
-                "xp": 60
-            },
-            {
-                "id": "css-05",
-                "title": "Targeting Matrix: Gravitational Constant",
-                "type": "multiple-choice",
-                "learningConcept": "[INTEL BRIEFING]: The `text-align` property acts as a gravitational constant for text nodes within a container, aligning them horizontally.",
-                "description": "[MISSION OBJECTIVE]: The text nodes in the `<h1>` container are misaligned. Select the correct protocol from the available options to apply a central gravitational pull.",
-                "brokenCode": "h1 {\n  /* Which property goes here? */\n}",
-                "options": [
-                    "align-content: center;",
-                    "justify-content: center;",
-                    "text-align: center;",
-                    "margin: auto;"
-                ],
-                "solution": "text-align: center;",
-                "xp": 50
-            }
+            { "id": "css-01", "title": "Firewall Alert: Unspecified Target", "learningConcept": "Concept: In CSS, to select and style all elements with a specific class, you must prefix the class name with a period (.).", "description": "Your Task: The style rule for 'error-text' isn't working because it's missing the period. Add the correct prefix to the selector.", "brokenCode": "error-text {\n  color: red;\n}", "solution": ".error-text", "xp": 40 },
+            { "id": "css-02", "title": "Security Breach: Unique Identifier", "learningConcept": "Concept: To select and style a single element with a unique ID, you must prefix the ID name with a hash symbol (#).", "description": "Your Task: The style for the 'main-nav' ID is not being applied. The selector is missing the hash symbol. Correct the selector.", "brokenCode": "main-nav {\n  background-color: #333;\n}", "solution": "#main-nav", "xp": 40 },
+            { "id": "css-03", "title": "Targeting Matrix: Gravitational Constant", "type": "multiple-choice", "learningConcept": "Concept: The 'text-align' property is used to control the horizontal alignment of text within an element.", "description": "Your Task: The text inside the h1 element is not centered. Choose the correct CSS property from the options below to center it.", "brokenCode": "h1 {\n  /* Which property goes here? */\n}", "options": [ "align-content: center;", "justify-content: center;", "text-align: center;", "margin: auto;" ], "solution": "text-align: center;", "xp": 50 },
+            { "id": "css-boss", "title": "BOSS: The Stylist's Challenge", "isBoss": true, "xp": 150, "learningConcept": "Concept: Mastering CSS involves knowing the right properties to control color, layout (like grid and flexbox), and alignment.", "stages": [
+                { "description": "[STAGE 1/3] Your Task: A '.warning' element is supposed to be red, but it's invisible. The 'color' property is set incorrectly. Change the value to 'red'.", "brokenCode": ".warning {\n  color: transparent;\n}", "solution": "color: red;" },
+                { "description": "[STAGE 2/3] Your Task: A layout container is meant to use the CSS Grid system, but it's not working. The 'display' property is wrong. Change it to 'grid'.", "brokenCode": ".grid-container {\n  display: block;\n}", "solution": "display: grid;" },
+                { "description": "[STAGE 3/3] Your Task: Items in a flexbox container need to be centered horizontally. 'align-items' handles vertical alignment. Use the correct property to center them along the main axis.", "brokenCode": ".flex-container {\n  display: flex;\n  align-items: center;\n}", "solution": "justify-content: center;" }
+            ]}
         ]
     },
     "JavaScript": {
         "displayName": "Module 3: JS Execution Logic",
         "rankUnlocked": "architectArcanist",
         "challenges": [
-            {
-                "id": "js-01",
-                "title": "Logic Bomb: Assignment vs. Comparison",
-                "learningConcept": "[INTEL BRIEFING]: In script execution, `=` is the assignment operator used to implant a value. `===` is the comparison operator used to verify a value. Confusing them can lead to catastrophic logic failures.",
-                "description": "[MISSION OBJECTIVE]: A conditional statement contains a logic bomb. It's assigning a value instead of comparing it. Disarm the bomb by correcting the operator to `===`.",
-                "brokenCode": "if (x = 10)",
-                "solution": "if (x === 10)",
-                "xp": 70
-            },
-            {
-                "id": "js-02",
-                "title": "Subroutine Malfunction",
-                "learningConcept": "[INTEL BRIEFING]: To execute a named subroutine (a function), you must use the invocation operator `()`. Simply referencing the name will not trigger execution.",
-                "description": "[MISSION OBJECTIVE]: The `showWelcomeMessage` subroutine is failing to execute because the invocation operator is missing. Trigger the subroutine correctly.",
-                "brokenCode": "const user = 'Alex';\nshowWelcomeMessage;",
-                "solution": "showWelcomeMessage();",
-                "xp": 70
-            },
-            {
-                "id": "js-03",
-                "title": "Interface Anomaly: Null Pointer",
-                "learningConcept": "[INTEL BRIEFING]: The `querySelector` utility requires a valid CSS selector string to interface with the Document Object Matrix (DOM). For unique IDs, this requires the `#` prefix.",
-                "description": "[MISSION OBJECTIVE]: A query for the `main-title` interface component is returning a null pointer. The selector is invalid. Correct the query string to establish a connection.",
-                "brokenCode": "document.querySelector('main-title');",
-                "solution": "document.querySelector('#main-title');",
-                "xp": 80
-            }
+            { "id": "js-01", "title": "Logic Bomb: Assignment vs. Comparison", "learningConcept": "Concept: In JavaScript, a single equals sign (=) assigns a value. To compare if two values are equal, you must use the triple equals sign (===).", "description": "Your Task: The 'if' statement is broken because it's using an assignment operator instead of a comparison operator. Correct the line to properly compare 'x' to 10.", "brokenCode": "if (x = 10)", "solution": "if (x === 10)", "xp": 70 },
+            { "id": "js-02", "title": "Subroutine Malfunction", "learningConcept": "Concept: To run, or 'call', a function in JavaScript, you must type its name followed by parentheses ().", "description": "Your Task: The code references the 'showWelcomeMessage' function, but doesn't actually run it. Add parentheses to the end of the line to call the function.", "brokenCode": "const user = 'Alex';\nshowWelcomeMessage;", "solution": "showWelcomeMessage();", "xp": 70 },
+            { "id": "js-boss", "title": "BOSS: The De-Bugger's Final Test", "isBoss": true, "xp": 200, "learningConcept": "Concept: Debugging JavaScript often involves fixing selectors to interact with HTML, ensuring functions return values, and correctly setting up event listeners.", "stages": [
+                { "description": "[STAGE 1/3] Your Task: The code is trying to select an HTML element with an ID of 'alert-banner', but the selector is wrong. Remember that ID selectors in JavaScript (like in CSS) need a '#' prefix.", "brokenCode": "document.querySelector('alert-banner');", "solution": "document.querySelector('#alert-banner');" },
+                { "description": "[STAGE 2/3] Your Task: The 'getUser' function is supposed to provide a username, but it doesn't return anything. Add the 'return' keyword to send the username value back.", "brokenCode": "function getUser() {\n  const username = 'Op_01';\n}", "solution": "return username;" },
+                { "description": "[STAGE 3/3] Your Task: An event listener is set up to run a 'handleClick' function when a button is clicked, but the syntax is incomplete. Pass the function name as the second argument to 'addEventListener'.", "brokenCode": "button.addEventListener('click');", "solution": "button.addEventListener('click', handleClick);" }
+            ]}
         ]
     }
 }
